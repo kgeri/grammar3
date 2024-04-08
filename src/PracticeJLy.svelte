@@ -1,18 +1,42 @@
 <script lang="ts">
     import { createEventDispatcher, onMount } from "svelte";
-    import { pickOne, type Result } from "./model";
     import dictionary from "./data/j-ly.txt?raw";
+    import { pickOne } from "./model";
 
     const dispatch = createEventDispatcher();
     const words = dictionary.split("\n");
     let word = "";
     let question = "";
+    let correctAnswer = "";
+    let options: string[] = [];
 
     onMount(next);
 
     function next() {
         word = pickOne(words);
-        question = word.replace(/(j|ly)/, "_");
+        question = word.replace(
+            /(.*?)(j|ly|J|Ly)(.*)/,
+            (_, begin, removedLetter, end) => {
+                correctAnswer = removedLetter;
+                return `${begin}_${end}`;
+            },
+        );
+        options = [correctAnswer, oppositeOf(correctAnswer)].toSorted();
+    }
+
+    function oppositeOf(correctAnswer: string): string {
+        switch (correctAnswer) {
+            case "j":
+                return "ly";
+            case "J":
+                return "Ly";
+            case "ly":
+                return "j";
+            case "Ly":
+                return "J";
+            default:
+                return "";
+        }
     }
 
     export function evaluate(letter: string) {
@@ -30,8 +54,9 @@
 <article>
     <h2>{question}</h2>
     <div role="group">
-        <button on:click={() => evaluate("j")}>j</button>
-        <button on:click={() => evaluate("ly")}>ly</button>
+        {#each options as option}
+            <button on:click={() => evaluate(option)}>{option}</button>
+        {/each}
     </div>
 </article>
 

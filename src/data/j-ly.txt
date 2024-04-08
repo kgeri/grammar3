@@ -143,7 +143,7 @@ engedélyével
 engedélyezett
 engedélyezte
 engedélyt
-erdély
+Erdély
 erdélyi
 ereje
 erejéig
@@ -240,7 +240,7 @@ formájában
 formáját
 funkciója
 gazdája
-gergely
+Gergely
 gondolja
 gondolják
 gondoljuk
@@ -355,7 +355,7 @@ irányítja
 ismerjük
 ja
 jaj
-jános
+János
 január
 japán
 japánban
@@ -470,9 +470,9 @@ jelzett
 jelzi
 jelzik
 jelző
-jenő
-jézus
-jézust
+Jenő
+Jézus
+Jézust
 jó
 jobb
 jobbak
@@ -523,8 +523,8 @@ jóvoltából
 jövőre
 jövőt
 józan
-józsef
-judit
+József
+Judit
 juhász
 július
 június
@@ -540,7 +540,7 @@ jutunk
 kapja
 kapják
 kapjon
-károly
+Károly
 kelljen
 képviselője
 kérjük
@@ -577,7 +577,7 @@ központja
 központjában
 küldj
 küldje
-lajos
+Lajos
 láthatjuk
 látja
 látják
@@ -647,7 +647,7 @@ melyre
 menj
 menjen
 menjünk
-mihály
+Mihály
 milyen
 mindjárt
 módja
@@ -734,7 +734,6 @@ rejlő
 rejtett
 reméljük
 rendje
-sajat
 saját
 sajátos
 sajna
