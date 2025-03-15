@@ -5,7 +5,9 @@ export default {
     rating3: "Hármas 😟",
     rating4: "Négyes 😊",
     rating5: "Ötös 🥰",
+    submit: "Mehet",
     types: {
         "jorly": "J vagy Ly",
+        "spell": "Tollbamondás",
     },
 };

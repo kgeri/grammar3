@@ -4,7 +4,7 @@
     import { pickOne } from "./model";
 
     const dispatch = createEventDispatcher();
-    const words = dictionary.split("\n");
+    const words = dictionary.trim().split("\n");
     let word = "";
     let question = "";
     let correctAnswer = "";
@@ -14,13 +14,10 @@
 
     function next() {
         word = pickOne(words);
-        question = word.replace(
-            /(.*?)(j|ly|J|Ly)(.*)/,
-            (_, begin, removedLetter, end) => {
-                correctAnswer = removedLetter;
-                return `${begin}_${end}`;
-            },
-        );
+        question = word.replace(/(.*?)(j|ly|J|Ly)(.*)/, (_, begin, removedLetter, end) => {
+            correctAnswer = removedLetter;
+            return `${begin}_${end}`;
+        });
         options = [correctAnswer, oppositeOf(correctAnswer)].toSorted();
     }
 
@@ -39,7 +36,7 @@
         }
     }
 
-    export function evaluate(letter: string) {
+    function evaluate(letter: string) {
         const response = question.replace("_", letter);
         const result = {
             correct: response == word,

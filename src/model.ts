@@ -3,10 +3,6 @@ export type Result = {
     message: string;
 }
 
-export interface ResultEvaluator {
-    evaluate(): Result;
-}
-
 export function nextInt(min: number, max: number) {
     return Math.floor(min + Math.random() * (max - min));
 }
